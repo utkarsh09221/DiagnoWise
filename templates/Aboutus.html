@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Disease Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    nav {
+      background-color: #4d4d4f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 110px;
+    }
+
+    .logo img {
+      height: 200px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff3366;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .heading {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      color: #555;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .main-footer {
+      background-color: #2f2f2f;
+      color: #ccc;
+      padding: 3rem 1rem 2rem;
+    }
+    
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      gap: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+    
+    .footer-column h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+      color: #ff3366;
+    }
+    
+    .footer-column p {
+      font-size: 0.95rem;
+      color: #bbb;
+      line-height: 1.6;
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-social a {
+      color: #ccc;
+      font-size: 1.4rem;
+      background: #444;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+    
+    .footer-social a:hover {
+      background: #ff3366;
+      transform: scale(1.1);
+    }
+    
+    
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+    
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="heading">About Us</h1>
+    <p class="description">
+      Welcome to Disease Predictor – where innovation meets care. We are a team of passionate developers and healthcare enthusiasts focused on harnessing the power of data science and artificial intelligence to make health assessment accessible and convenient. Our system analyzes symptoms to offer fast and reliable disease predictions, helping users make informed decisions about their health. With a clean and interactive user interface, our platform ensures that anyone – regardless of their tech expertise – can benefit from our services. We believe in a future where technology empowers people to lead healthier lives, and we’re committed to continuous improvement and innovation. Join us on this journey to revolutionize digital health.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="static/our mission.jpg" alt="Our Mission">
+        <div class="card-content">
+          <div class="card-title">Our Mission</div>
+          <p class="card-text">To provide quick, accurate, and user-friendly health predictions using AI technology, accessible to everyone.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="static/choose.jpg" alt="Why Choose Us">
+        <div class="card-content">
+          <div class="card-title">Why Choose Us?</div>
+          <p class="card-text">Because we combine innovation, simplicity, and reliability — making your well-being our top priority.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Disease Prediction</a></li>
+          <li><a href="#">Health Tips</a></li>
+          <li><a href="#">Medical Resources</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>Disease Predictor</h3>
+        <p>
+          Our advanced system helps you identify potential health concerns based on your symptoms. Always consult with a healthcare professional for medical advice.
+        </p>
+      </div>
+    </div>
+  
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Disease Predictor. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</div>
+
+</body>
+</html>

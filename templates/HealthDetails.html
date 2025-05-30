@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Insights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f9f9;
+      color: #333;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+
+    .navbar-custom {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-custom h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .navbar-custom nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .section {
+      margin-bottom: 0;
+    }
+
+    .section img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #27ae60;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .footer-custom {
+      background-color: #2c2c2c;
+      color: #ccc;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .footer-custom .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-custom .footer-column {
+      flex: 1 1 200px;
+      margin: 1rem;
+    }
+
+    .footer-custom h3 {
+      color: white;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-custom ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-custom ul li {
+      margin: 0.3rem 0;
+    }
+
+    .footer-custom a {
+      text-decoration: none;
+      color: #ccc;
+    }
+
+    .footer-custom .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .footer-custom .social-icons a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+
+    .footer-custom p.copyright {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .navbar-custom nav a.active {
+      border-bottom: 2px solid #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+   
+  <div class="navbar-custom">
+    <div class="logo" style="display: flex; align-items: center;">
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/predict">Predict</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>Health Insights</h1>
+    <p>Discover valuable health information tailored for you.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 🏥 General Health & Wellness -->
+    <div class="section">
+      <img src="static/General Health & Wellness.png" alt="General Health & Wellness">
+      <h2>🏥 General Health & Wellness</h2>
+      <p>
+        Maintaining general health and wellness is essential for a long and fulfilling life. Regular check-ups allow early detection of potential illnesses, update necessary vaccinations, and ensure continuous health monitoring. Your body’s vital signs—like blood pressure, blood sugar, and BMI—are key indicators of well-being and need routine observation. Understanding what these metrics represent and how to interpret them helps you take proactive steps to avoid serious health issues. Strengthening your immune system through proper nutrition, exercise, and enough sleep enhances your natural defense against infections. Wellness isn't just about being illness-free—it's about feeling your best every day. Small lifestyle changes such as taking daily walks, reducing stress, staying hydrated, and eating wholesome foods contribute significantly to overall health. Make your wellness a priority by staying informed and consistent with healthy routines.
+      </p>
+    </div>
+
+    <!-- 🥗 Nutrition & Diet -->
+    <div class="section">
+      <img src="static/Nutrition & Diet.png" alt="Nutrition & Diet">
+      <h2>🥗 Nutrition & Diet</h2>
+      <p>
+        Proper nutrition forms the foundation of good health. Superfoods such as berries, nuts, leafy greens, and fatty fish are packed with vitamins, antioxidants, and essential nutrients that boost immunity and reduce disease risk. A balanced diet ensures your body receives carbohydrates, proteins, fats, and fiber in the right proportions. Tailoring diets for different age groups is vital—children need more calcium and iron, while older adults may benefit from more fiber and less salt. Hydration also plays a critical role in digestion, skin health, and energy. While the “8 glasses a day” rule is common, individual water needs vary depending on lifestyle and climate. Nutritional awareness helps prevent chronic conditions like diabetes, obesity, and heart disease. Instead of focusing on calorie counting, focus on eating whole, nutrient-dense foods, avoiding processed meals, and cooking at home. Making informed choices now leads to better health outcomes in the future.
+      </p>
+    </div>
+
+    <!-- 🏃‍♂️ Fitness & Lifestyle -->
+    <div class="section">
+      <img src="static/Fitness & Lifestyle.png" alt="Fitness & Lifestyle">
+      <h2>🏃‍♂️ Fitness & Lifestyle</h2>
+      <p>
+        Fitness and a healthy lifestyle go hand in hand. You don't need a gym to stay fit—10-minute home workouts, stretching routines, or yoga can work wonders when done consistently. Daily habits like walking, taking stairs, and avoiding prolonged sitting support cardiovascular health and increase stamina. Good sleep is another pillar of health; it regulates mood, supports memory, and helps the body repair itself. Aim for 7–9 hours of quality sleep each night. Managing screen time and taking breaks from digital devices also improve mental clarity. Healthy lifestyle choices also include avoiding smoking, limiting alcohol, and surrounding yourself with supportive relationships. Small steps, like drinking enough water, eating breakfast, and being mindful of your emotions, can build a lifestyle that not only extends your lifespan but also improves the quality of your life. Commit to these changes and you’ll feel more energetic, focused, and fulfilled.
+      </p>
+    </div>
+
+    <!-- 🧬 Disease Awareness -->
+    <div class="section">
+      <img src="static/Disease Awareness.png" alt="Disease Awareness">
+      <h2>🧬 Disease Awareness</h2>
+      <p>
+        Disease awareness is key to prevention and early treatment. Common conditions like diabetes, thyroid disorders, and hypertension often start with subtle symptoms like fatigue, weight changes, or frequent urination. Recognizing these early signs can lead to timely medical intervention and a better prognosis. Seasonal illnesses like the flu, dengue, or viral infections also pose recurring threats. Knowing the difference between bacterial and viral infections is essential for effective treatment—antibiotics work on bacteria, not viruses. Education about diseases helps reduce stigma and misinformation. Preventing disease involves more than just treatment—it’s about awareness, hygiene, nutrition, and regular screenings. Community health programs, vaccinations, and digital tools can help spread awareness and empower individuals to take control of their health. An informed mind is your best defense against disease.
+      </p>
+    </div>
+
+    <!-- 🧘 Mental Health -->
+    <div class="section">
+      <img src="static/Mental Health.png" alt="Mental Health">
+      <h2>🧘 Mental Health</h2>
+      <p>
+        Mental health is just as important as physical health. It affects how we think, feel, and act. Stress and anxiety are common, but manageable through healthy coping mechanisms. Practices like meditation, mindfulness, journaling, and breathing exercises can reduce daily tension and promote inner peace. Recognizing warning signs—such as withdrawal, mood changes, or difficulty concentrating—can prompt early support. Talking about mental health openly helps break stigma and encourages those in need to seek help. Building strong relationships, maintaining routines, and pursuing hobbies are great ways to boost mental wellness. Mental health care is a lifelong process. If you're feeling overwhelmed, remember it’s okay to ask for help—from a friend, family member, or professional. You deserve care, compassion, and peace of mind.
+      </p>
+    </div>
+
+    <!-- 💊 Health Tech & Innovation -->
+    <div class="section">
+      <img src="static/Health Tech & Innovation.png" alt="Health Tech & Innovation">
+      <h2>💊 Health Tech & Innovation</h2>
+      <p>
+        Technology is transforming healthcare at an unprecedented pace. From AI-powered diagnostics to wearable fitness trackers, patients can now monitor their health in real time. Symptom checkers, telemedicine, and health apps provide accessibility like never before. AI helps doctors analyze data, predict disease outbreaks, and customize treatments for individuals. Wearables such as smartwatches track heart rate, sleep, and activity levels, encouraging users to stay engaged in their wellness journey. While convenient, it’s important to use technology wisely and not replace professional advice with apps. Tech should empower patients, not confuse them. Future innovations like gene editing, remote surgeries, and smart implants hold immense potential. As this field grows, ethical concerns and data privacy must also be considered. Health tech is not just about gadgets—it's about saving lives, faster diagnoses, and personalized care.
+      </p>
+    </div>
+
+    <!-- 👩‍⚕️ Preventive Care -->
+    <div class="section">
+      <img src="static/Preventive Care.png" alt="Preventive Care">
+      <h2>👩‍⚕️ Preventive Care</h2>
+      <p>
+        Preventive care is your first line of defense against disease. It includes screenings, vaccinations, lifestyle counseling, and regular health evaluations. Getting vaccinated protects you and those around you from serious illnesses like measles, hepatitis, or HPV. Early detection of diseases, especially cancers and chronic conditions, improves treatment success rates and saves lives. Hand hygiene, clean environments, and avoiding close contact with sick individuals are simple yet effective ways to stop the spread of infections. Preventive care also includes mental health checks, vision and dental assessments, and awareness of hereditary risks. Staying educated and proactive in your health decisions helps reduce future complications. Think of prevention as investing in a healthier tomorrow. Don't wait for symptoms—take control today.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Disease Prediction</a></li>
+          <li><a href="#">Health Tips</a></li>
+          <li><a href="#">Medical Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+
+      
+      <div class="footer-column">
+        <h3>Disease Predictor</h3>
+        <p>
+          Our system helps identify health concerns based on symptoms. Always consult with a healthcare professional.
+        </p>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="static/facebook.png" alt="Facebook" width="24"/></a>
+      <a href="#"><img src="static/twitter.png" alt="Twitter" width="24"/></a>
+      <a href="#"><img src="static/linkedin.png" alt="LinkedIn" width="24"/></a>
+      <a href="#"><img src="static/instagram.png" alt="Instagram" width="24"/></a>
+    </div>
+    <p class="copyright">© 2025 Disease Predictor. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

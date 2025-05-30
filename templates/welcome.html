@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DiagnoWise</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    *, *:after, *:before {
+     
+      box-sizing: border-box;
+    }
+    
+
+    body {
+      background: #e5e8e8 ;
+      color: #333;
+      font-family: 'Ubuntu', sans-serif;
+      position: relative;
+     
+    }
+
+    .svg-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    svg path {
+      transition: .1s;
+    }
+
+    svg:hover path {
+      d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+    }
+
+    header {
+      color: #fff;
+      padding-top: 10vw;
+      padding-bottom: 30vw;
+      text-align: center;
+      position: relative;
+    }
+
+    .auth-links {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+
+    .auth-links a {
+      color: #fff;
+      margin-left: 20px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .auth-links a:hover {
+      color: black;
+    }
+
+    h3 {
+      font-weight: 400;
+    }
+
+    main {
+      background: linear-gradient(to bottom,#e5e8e8 0%,#e5e8e8100%);
+      border-bottom: 1px solid rgba(0, 0, 0, .2);
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main::after {
+      border-right: 2px dashed #eee;
+      content: '';
+      position: absolute;
+      top: calc(10vh + 1.618em);
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+    }
+
+    .main-nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      color: #50c6d8;
+    }
+
+    footer {
+      background: #dddee1;
+      padding: 5vh 0;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Footer Styles */
+    .container{
+      max-width: 1170px;
+      margin:auto;
+    }
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    ul{
+      list-style: none;
+    }
+    .footer{
+      background-color: #24262b;
+      padding: 70px 0;
+    }
+    .footer-col{
+      width: 25%;
+      padding: 0 15px;
+    }
+    .footer-col h4{
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+    .footer-col h4::before{
+      content: '';
+      position: absolute;
+      left:0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+    .footer-col ul li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a{
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+      color: #ffffff;
+      padding-left: 8px;
+    }
+    .footer-col .social-links a{
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255,255,255,0.2);
+      margin:0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+    .footer-col .social-links a:hover{
+      color: #24262b;
+      background-color: #ffffff;
+    }
+    /*responsive*/
+    @media(max-width: 767px){
+      .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+    @media(max-width: 574px){
+      .footer-col{
+        width: 100%;
+      }
+    }
+
+    .container {
+      background: #232323;
+      border-radius:2%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      .box {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    
+        .title {
+          width: 100%;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 50px;
+    
+          .block {
+            width: 0%;
+            height: inherit;
+            background: #ffb510;
+            position: absolute;
+            animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+            display: flex;
+          }
+    
+          h1 {
+            font-family: 'Poppins';
+            color: #fff;
+            font-size: 32px;
+            -webkit-animation: mainFadeIn 2s forwards;
+            -o-animation: mainFadeIn 2s forwards;
+            animation: mainFadeIn 2s forwards;
+            animation-delay: 1.6s;
+            opacity: 0;
+            display: flex;
+            align-items: baseline;
+            position: relative;
+    
+            span {
+              width:0px;
+              height: 0px;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              border-radius: 50%;
+    
+              background: #ffb510;
+              -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
+              animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+              animation-delay: 2s;
+              margin-left: 5px;
+              margin-top: -10px;
+              position: absolute;
+              bottom: 13px;
+              right: -12px;
+    
+            }
+          }
+        }
+    
+        .role {
+          width: 100%;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 30px;
+          margin-top: -10px;
+    
+          .block {
+            width: 0%;
+            height: inherit;
+            background: #e91e63;
+            position: absolute;
+            animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+            animation-delay: 2s;
+            display: flex;
+          }
+    
+          p {
+            animation: secFadeIn 2s forwards;
+            animation-delay: 3.2s;
+            opacity: 0;
+             font-weight: 400;
+            font-family: 'Lato';
+            color: #ffffff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+    
+    @keyframes mainBlock {
+      0% {
+        width: 0%;
+        left: 0;
+    
+      }
+      50% {
+        width: 100%;
+        left: 0;
+    
+      }
+      100% {
+        width: 0;
+        left: 100%;
+      }
+    }
+    
+    @keyframes secBlock {
+      0% {
+        width: 0%;
+        left: 0;
+    
+      }
+      50% {
+        width: 100%;
+        left: 0;
+    
+      }
+      100% {
+        width: 0;
+        left: 100%;
+      }
+    }
+    
+    @keyframes mainFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    
+    @keyframes popIn {
+      0% {
+        width: 0px;
+        height: 0px;
+        background: #e9d856;
+        border: 0px solid #ddd;
+        opacity: 0;
+      }
+      50% {
+        width: 10px;
+        height: 10px;
+        background: #e9d856;
+        opacity: 1;
+        bottom: 45px;
+      }
+       65% {
+          width: 7px;
+        height: 7px;
+          bottom: 0px;
+          width: 15px
+       }
+       80% {
+          width: 10px;
+        height: 10px;
+          bottom: 20px
+       }
+      100% {
+        width: 7px;
+        height: 7px;
+        background: #e9d856;
+        border: 0px solid #222;
+        bottom: 13px;
+    
+      }
+    }
+    
+    @keyframes secFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+    
+    .card-text small {
+      font-weight: bold;
+      text-align: left;
+      display: block;
+      padding-left:90px;
+    }
+    
+    
+
+  </style>
+</head>
+<body>
+  <div class="svg-container">
+    <svg viewBox="0 0 800 400" class="svg">
+      <path id="curve" fill="#50c6d8" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
+    </svg>
+  </div>
+
+  <header>
+  <div class="logo-container" style="position: absolute; top: -30px; left: 2px; padding: 0px;">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="height: 150px; width: auto;">
+  </div>
+    <div class="auth-links">
+      <a href="{{ url_for('welcome') }}">Home</a>
+<a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Signup</a>
+    </div>
+    <div class="container">
+      <div class="box">
+  
+          <div class="title">
+              <span class="block"></span>
+              <h1>Diagno Wise<span></span></h1>
+          </div>
+  
+          <div class="role">
+              <div class="block"></div>
+              <p>An AI EXPERT</p>
+          </div>
+  
+      </div>
+  </div>
+  </header>
+
+  <main>
+    <div class="card mb-3" style="width: 75%; background-color:#e5e8e8;">
+      <div class="row g-0">
+        <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+          <img src="{{ url_for('static', filename='predi.png') }}" class="img-fluid rounded-start mb-3" alt="..." style="height: 400px; width: 400px; object-fit: cover;">
+          <h5 class="card-title text-center">Disease Prediction Using Symptoms</h5>
+        </div>
+        <div class="col-md-8 d-flex flex-column justify-content-center">
+          <div class="card-body">
+            <p class="">Get personalized disease predictions based on your symptoms and health data.</p>
+            <p class="card-text"><small class="text-muted">1. Alwaysn consult with a doctor</small></p>
+            <p class="card-text"><small class="text-muted">2. Not a substitute for medical advice.</small></p>
+            <p class="card-text"><small class="text-muted">3. Seek medical guidance before use.</small></p>
+            <p class="card-text"><small class="text-muted">4. Do not take medication without prescription.</small></p>
+            <p class="card-text"><small class="text-muted">5. Consult a specialist if symptoms persist.</small></p>
+            <p class="card-text"><small class="text-muted">6. Do not self-diagnose or treat.</small></p>
+            <p class="card-text"><small class="text-muted">7. Medicine use must be doctor-approved.</small></p>
+            <p class="card-text"><small class="text-muted">8. Complete the full course of medicine.</small></p>
+            <p class="card-text"><small class="text-muted">9. Predictions may not be 100% accurate.</small></p>
+            <p class="card-text"><small class="text-muted">10. Tool results should be verified medically.</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <br>
+  <br>
+  <nr>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+    :root {
+      --brand-color: hsl(46, 100%, 50%);
+      --black: hsl(0, 0%, 0%);
+      --white: hsl(0, 0%, 100%);
+      --font-title: "Montserrat", sans-serif;
+      --font-text: "Lato", sans-serif;
+    }
+
+    .new-cards-container {
+      display: flex;
+      gap: 100px; /* Added gap between cards */
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0; /* Remove padding to eliminate spaces */
+      background: linear-gradient(to bottom, #e5e8e8  0%, #e5e8e8  100%);
+      margin: 0; /* Remove margin to eliminate spaces */
+    }
+
+    .card {
+      display: grid;
+      place-items: center;
+      width: 21.875rem;
+      height: 28.125rem;
+      overflow: hidden;
+      border-radius: 0.625rem;
+      box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+      margin: 0; /* Remove margin to eliminate gaps */
+      padding: 0; /* Remove padding to eliminate gaps */
+    }
+
+    .card > * {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .card__background {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: flex-end;
+      height: 55%;
+      padding: 12% 1.25rem 1.875rem;
+      background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 0%, 0) 0%,
+        hsla(0, 0%, 0%, 0.3) 10%,
+        hsl(0, 0%, 0%) 100%
+      );
+      transform: translateY(62%);
+      transition: transform 500ms ease-out;
+    }
+
+    .card__content--container {
+      margin-bottom: 1.25rem;
+    }
+
+    .card__title {
+      position: relative;
+      width: fit-content;
+      font-size: 2rem;
+      font-family: var(--font-title);
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .card__title::after {
+      content: "";
+      position: absolute;
+      height: 0.3125rem;
+      width: calc(100% + 1.25rem);
+      bottom: calc((1.25rem - 0.5rem) * -1);
+      left: -1.25rem;
+      background-color: var(--brand-color);
+      opacity: 0;
+      transform: scaleX(0);
+      transition: opacity 1000ms ease-in, transform 500ms ease-out;
+      transform-origin: right;
+    }
+
+    .card__description {
+      font-family: var(--font-text);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--white);
+      opacity: 0;
+      transition: opacity 500ms ease-out;
+    }
+
+    .card__button {
+      padding: 0.75em 1.6em;
+      width: fit-content;
+      font-variant: small-caps;
+      font-weight: bold;
+      border-radius: 0.45em;
+      border: none;
+      background-color: var(--brand-color);
+      font-family: var(--font-title);
+      font-size: 1.125rem;
+      color: var(--black);
+      opacity: 0;
+      transition: opacity 500ms ease-out;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      transition: transform 500ms ease-in;
+    }
+
+    .card:hover .card__content {
+      transform: translateY(0);
+      transition: transform 500ms ease-in;
+    }
+
+    .card:hover .card__background {
+      transform: scale(1.1);
+      transition: transform 500ms ease-in;
+    }
+
+    .card:hover .card__title::after {
+      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: opacity 500ms ease-in, transform 500ms ease-in;
+    }
+
+    .card:hover .card__description,
+    .card:hover .card__button {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+      transition-delay: 500ms;
+    }
+  </style>
+
+  <div class="new-cards-container">
+    <article class="card">
+      <img
+        class="card__background"
+        src="{{ url_for('static', filename='AI.png') }}"
+        alt="Disease prediction illustration"
+      />
+      <div class="card__content">
+        <div class="card__content--container">
+          <h2 class="card__title">Health Prediction</h2>
+          <p class="card__description">
+            Get personalized disease predictions based on your symptoms.
+          </p>
+        </div>
+        <a href="{{ url_for('login') }}"><button class="card__button">Try Now</button></a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        class="card__background"
+        src="{{ url_for('static', filename='bodymain.jpeg') }}"
+        alt="Health insights illustration"
+      />
+      <div class="card__content">
+        <div class="card__content--container">
+          <h2 class="card__title">Health Insights</h2>
+          <p class="card__description">
+            Discover valuable health information tailored for you.
+          </p>
+        </div>
+<a href="{{ url_for('healthdetails') }}"><button class="card__button">Learn More</button></a>
+      </div>
+    </article>
+  </div>
+  <br>
+  <br>
+  <nr>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">bag</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">dress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var $curve = document.getElementById("curve");
+      var last_known_scroll_position = 0;
+      var defaultCurveValue = 350;
+      var curveRate = 3;
+      var ticking = false;
+      var curveValue;
+
+      function scrollEvent(scrollPos) {
+        if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
+          curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
+          $curve.setAttribute(
+            "d",
+            "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
+          );
+        }
+      }
+
+      window.addEventListener("scroll", function() {
+        last_known_scroll_position = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            scrollEvent(last_known_scroll_position);
+            ticking = false;
+          });
+        }
+
+        ticking = true;
+      });
+    })();
+
+    <script>
+      const svgPath = document.getElementById('curve');
+      document.querySelector('svg').addEventListener('mouseenter', () => {
+        svgPath.setAttribute("d", "M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+      });
+      document.querySelector('svg').addEventListener('mouseleave', () => {
+        svgPath.setAttribute("d", "M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z");
+      });
+    </script>
+    
+  </script>
+</body>
+</html>

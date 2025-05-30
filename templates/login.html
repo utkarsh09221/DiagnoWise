@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Disease Prediction</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.3/ionicons.min.css">
+  <style>
+    :root {
+      --primary: hsl(213deg 85% 97%);
+      --secondary: hsl(233deg 36% 38%);
+      --background: hsl(218deg 50% 91%);
+      --input-bg: hsl(0deg 0% 100%);
+      --input-shadow: hsl(231deg 62% 94%);
+      --text: hsl(0deg 0% 30%);
+      --placeholder: hsl(0deg 0% 0%);
+      --footer-text: hsl(0deg 0% 37%);
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      user-select: none;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      background: var(--background);
+      min-height: 100vh;
+    }
+
+    nav {
+      background: #4d4d4f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ea1d6f;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .screen-1 {
+      background: var(--primary);
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      border-radius: 30px;
+      box-shadow: 0 0 2em var(--input-shadow);
+      gap: 2em;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    .email, .password {
+      background: var(--input-bg);
+      box-shadow: 0 0 2em var(--input-shadow);
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      border-radius: 20px;
+      color: var(--text);
+    }
+
+    .input-field {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .input-field input {
+      outline: none;
+      border: none;
+      width: 100%;
+      background: transparent;
+    }
+
+    .input-field input::placeholder {
+      color: var(--placeholder);
+      font-size: 0.9em;
+    }
+
+    .input-field ion-icon {
+      color: var(--text);
+    }
+
+    .password .show-hide {
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      padding: 1em;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1em;
+      transition: opacity 0.2s;
+    }
+
+    .login-btn:hover {
+      opacity: 0.9;
+    }
+
+    .main-footer {
+      background-color: #2f2f2f;
+      color: #ccc;
+      padding: 3rem 1rem 2rem;
+    }
+    
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      gap: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+    
+    .footer-column h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+      color: #ff3366;
+    }
+    
+    .footer-column p {
+      font-size: 0.95rem;
+      color: #bbb;
+      line-height: 1.6;
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-social a img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s;
+    }
+    
+    .footer-social a:hover img {
+      transform: scale(1.1);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+  
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo" style="display: flex; align-items: center;">
+      <h1>DiagnoWise</h1>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Login Content -->
+  <main class="main-content">
+    <div class="screen-1">
+      <div class="logo">
+        <h3>Login To Your Account</h3>
+      </div>
+      <form method="POST" action="/login">
+        <div class="email">
+          <div class="input-field">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="password">
+          <div class="input-field">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" name="password" placeholder="Password" id="password-input" required>
+            <ion-icon name="eye-outline" class="show-hide" id="show-hide"></ion-icon>
+          </div>
+        </div>
+        <button class="login-btn" type="submit">Login</button>
+      </form>
+      <div class="footer">
+        <span>Sign up</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Disease Prediction</a></li>
+          <li><a href="#">Health Tips</a></li>
+          <li><a href="#">Medical Resources</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>Disease Predictor</h3>
+        <p>
+          Our advanced system helps you identify potential health concerns based on your symptoms. Always consult with a healthcare professional for medical advice.
+        </p>
+      </div>
+    </div>
+  
+    <div class="footer-social">
+      <a href="#"><img src="static/facebook.svg" alt="Facebook" /></a>
+      <a href="#"><img src="static/twitter.svg" alt="Twitter" /></a>
+      <a href="#"><img src="static/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="#"><img src="static/instagram.svg" alt="Instagram" /></a>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Disease Predictor. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script>
+    document.getElementById('show-hide').addEventListener('click', function () {
+      const passwordInput = document.getElementById('password-input');
+      const icon = this;
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.name = 'eye-off-outline';
+      } else {
+        passwordInput.type = 'password';
+        icon.name = 'eye-outline';
+      }
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+</html>

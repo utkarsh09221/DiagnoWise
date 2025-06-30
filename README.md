@@ -25,5 +25,4 @@ Diagnowise is a Flask-based web application that predicts diseases based on user
 
 ---
 
-## 📁 Project Structure
 
